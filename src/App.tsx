@@ -18,7 +18,6 @@ useEffect(()=>{
   fetchCatFact()
 },[])
  
-
   return (
     <>
      <Sdiv>
@@ -46,9 +45,18 @@ const Sbutton = styled.button`
   outline: none;
   border: none;
   cursor: pointer;
+
+  @media (width>768px){
+    width: 400px;
+    border-radius: 20px;
+  }
 `
 const Sspan = styled.span`
   color: white;
+
+  @media(width>768px){
+    color: yellow;
+  }
 `
 const Spi = styled.p `
   color: red;
@@ -58,4 +66,8 @@ const Spi = styled.p `
   width: 200px;
   height: 100%;
   border: 1px solid black;
+  
+  @media(width>768px){
+    width: 300px;
+  }
 `
