@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import axios from "axios"
 import { useState } from "react"
+import Globalstyle from "./Globalstyles"
 
 
 interface AgePrediction {
@@ -23,23 +24,36 @@ function App() {
   }
  
   return (
+    
     <Sdiv>
+      <Globalstyle/>
       <Sinput name="inForName" placeholder="Ex. Name... " onChange={(event) => {setName(event.target.value)}}/>
       <Sbut onClick={fetchData}>Predict Info</Sbut>   
-
-      <h1>Predicted name: {predAge?.name} </h1>
-      <h1>Predicted Age: {predAge?.age} </h1>
-      <h1>Predicted count: {predAge?.count} </h1>
+      <Eichebisdiv>
+      <Seiherti>Predicted name: {predAge?.name} </Seiherti>
+      <Seiherti>Predicted Age: {predAge?.age} </Seiherti>
+      <Seiherti>Predicted count: {predAge?.count} </Seiherti>
+      </Eichebisdiv>
     </Sdiv>
   )
 }
 
 export default App
 
+
+const Eichebisdiv = styled.div`
+  margin-top: 20px;
+`
+
+const Seiherti = styled.h1`
+  color: white;
+`
+
 const Sinput = styled.input `
   width: 300px;
-  height: 30px;
+  height: 35px;
   margin-bottom: 30px;
+  border-radius: 20px;
 ` 
 
 const Sdiv = styled.div`
@@ -48,7 +62,7 @@ const Sdiv = styled.div`
   margin-top: 50px;
 `
 const Sbut = styled.button`
-width: 100px;
+width: 300px;
 height: 30px;
 background-color: blueviolet;
 border-radius: 20px;
