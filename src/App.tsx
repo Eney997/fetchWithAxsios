@@ -3,10 +3,17 @@ import axios from "axios"
 import { useState } from "react"
 
 
+interface AgePrediction {
+  name: string;
+  age: number;
+  count: number;
+}
+
 function App() {
   
   const [name,setName] = useState('')
-  const [predAge,setpredAge] = useState(null)
+  const [predAge,setpredAge] = useState<AgePrediction | null>(null)
+  
 
   const fetchData = () => {
   axios.get(`https://api.agify.io/?name=${name}`)
